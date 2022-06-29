@@ -21,10 +21,6 @@ class Permissoes extends Seeder
         Permission::create(['name' => 'parceiro']);
         Permission::create(['name' => 'comprador']);
         Permission::create(['name' => 'visitante']);
-        Permission::create(['name' => 'operador']);
-        Permission::create(['name' => 'gestorUnidade']);
-        Permission::create(['name' => 'gestorFinanceiro']);
-        Permission::create(['name' => 'rh']);
 
     }
 }
