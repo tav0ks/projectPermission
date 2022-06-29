@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use LaravelLegends\PtBrValidator\Rules\CpfOuCnpj;
 
 class RegisteredUserController extends Controller
 {
@@ -35,12 +36,14 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'cpf' => ['required', new CpfOuCnpj],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
+            'cpf' => $request->cpf,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ])->givePermissionTo('admin');

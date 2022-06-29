@@ -19,34 +19,39 @@
             <div>
                 <x-label style="color: white;" for="email" :value="__('Email')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
+                    required autofocus />
             </div>
 
             <!-- Password -->
             <div class="mt-4">
                 <x-label style="color: white;" for="password" :value="__('Senha')" />
 
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required
+                    autocomplete="current-password" />
             </div>
 
             <!-- Remember Me -->
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
+                    <input id="remember_me" type="checkbox"
+                        class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        name="remember">
                     <span style="color: white;" class="ml-2 text-sm text-gray-600">{{ __('Lembrar') }}</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                <a style="color: white;" class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                    <!-- {{ __('Esqueci minha senha') }} -->
-                </a>
+                    <a style="color: white;" class="underline text-sm text-gray-600 hover:text-gray-900"
+                        href="{{ route('password.request') }}">
+                        <!-- {{ __('Esqueci minha senha') }} -->
+                    </a>
                 @endif
 
                 @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline" style="color: white;">REGISTRAR</a>
-
+                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline"
+                        style="color: white;">REGISTRAR</a>
                 @endif
 
                 <x-button style="color: white; background-color:black" class="ml-3">
