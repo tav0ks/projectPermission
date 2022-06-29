@@ -46,7 +46,7 @@ class RegisteredUserController extends Controller
             'cpf' => $request->cpf,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-        ])->givePermissionTo('admin');
+        ])->givePermissionTo('parceiro');
 
         event(new Registered($user));
 
